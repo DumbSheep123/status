@@ -20,10 +20,12 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
+      /* Add the following styles to center the container */
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      /* End of centering styles */
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,12 +73,12 @@
       background-color: #2ecc71;
     }
 
-    .status-warning .status-indicator {
-      background-color: #f39c12;
-    }
-
     .status-down .status-indicator {
       background-color: #e74c3c;
+    }
+
+    .status-warning .status-indicator {
+      background-color: #f39c12;
     }
 
     .description {
@@ -89,6 +91,7 @@
 
     @media screen and (max-width: 480px) {
       .container {
+        max-width: 100%;
         padding: 10px;
       }
 
@@ -103,6 +106,11 @@
 
       .status-indicator {
         margin-right: 5px;
+        margin-bottom: 10px;
+      }
+
+      .status-text {
+        margin-bottom: 10px;
       }
 
       .description {
@@ -125,7 +133,9 @@
       contact us for assistance.
     </div> -->
     <div class="description">
-      An earlier issue was identified with beta.wmata.info, however, we are pleased to confirm that all systems are now operational and functioning as expected. Our team is currently conducting an investigation into the cause of the outage. We would like to assure that all services have been fully restored.
+      An earlier issue was identified with beta.wmata.info, however, we are pleased to confirm that all systems are now
+      operational and functioning as expected. Our team is currently conducting an investigation into the cause of the
+      outage. We would like to assure that all services have been fully restored.
     </div>
   </div>
 </body>
