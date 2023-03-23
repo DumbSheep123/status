@@ -4,25 +4,25 @@ const urlist = {
 };
 
 Object.keys(urls).forEach(key => {
-    const url = urlist[key];
+    const url = urls[key];
     const statusElement = document.querySelector(`#${key}`);
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                statusElement.classList.remove('status-up');
-                statusElement.classList.add('status-down');
-                statusElement.querySelector('.status-text').textContent = `Server is down (${response.status})`;
-                console.log(response);
-            } else {
-                statusElement.classList.remove('status-down');
-                statusElement.classList.add('status-up');
-                statusElement.querySelector('.status-text').textContent = 'All systems operational';
-                console.log(response);
-            }
-        })
-        .catch(error => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            statusElement.classList.remove('status-down');
+            statusElement.classList.add('status-up');
+            statusElement.querySelector('.status-text').textContent = 'All systems operational';
+        } else {
             statusElement.classList.remove('status-up');
             statusElement.classList.add('status-down');
-            statusElement.querySelector('.status-text').textContent = 'Server is down (network error)';
-        });
+            statusElement.querySelector('.status-text').textContent = `Server is down (${xhr.status})`;
+        }
+    };
+    xhr.onerror = () => {
+        statusElement.classList.remove('status-up');
+        statusElement.classList.add('status-down');
+        statusElement.querySelector('.status-text').textContent = 'Server is down (network error)';
+    };
+    xhr.send();
 });
