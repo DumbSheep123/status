@@ -13,10 +13,12 @@ Object.keys(urls).forEach(key => {
             statusElement.classList.remove('status-down');
             statusElement.classList.add('status-up');
             statusElement.querySelector('.status-text').textContent = 'All systems operational';
+            console.log(xhr.status)
         } else {
             statusElement.classList.remove('status-up');
             statusElement.classList.add('status-down');
             statusElement.querySelector('.status-text').textContent = `Server is down (${xhr.status})`;
+            console.log(xhr.status)
         }
     };
     xhr.onerror = () => {
