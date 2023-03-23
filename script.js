@@ -6,10 +6,10 @@ window.onload = function updateStatus() {
   fetch('https://beta.wmata.info/status')
     .then(response => response.json())
     .then(data => {
-      if (data.status === 'OK') {
+      if (data.response === 'OK') {
         statusElement.classList.remove('status-down');
         statusElement.classList.add('status-up');
-        alert(data.status);
+        alert(data.response);
         statusElement.querySelector('.status-text').textContent = 'All systems are operational';
       } else {
         statusElement.classList.remove('status-up');
