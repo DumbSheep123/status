@@ -9,7 +9,7 @@ window.onload = function updateStatus() {
       if (data.status === 'OK') {
         statusElement.classList.remove('status-down');
         statusElement.classList.add('status-up');
-        statusElement.querySelector('.status-text').textContent = 'All systems operational';
+        statusElement.querySelector('.status-text').textContent = 'All systems are operational';
       } else {
         statusElement.classList.remove('status-up');
         statusElement.classList.add('status-down');
