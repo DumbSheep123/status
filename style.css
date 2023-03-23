@@ -64,7 +64,8 @@ body {
 }
 
 .status-down .status-indicator {
-    background-color: #e74c3c;
+    /* background-color: #e74c3c; */
+    background-color: #f04b72;
 }
 
 .status-warning .status-indicator {
