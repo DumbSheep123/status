@@ -85,6 +85,14 @@ body {
         color: #f7f7f7;
     }
 
+    .header {
+        color: #f7f7f7;
+    }
+
+    .status-text span {
+        color: #bebebe;
+    }
+
     .container {
         background-color: #555555;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
