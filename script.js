@@ -1,6 +1,6 @@
 const urls = {
-    'wmata': 'http://wmata.info',
-    'beta-wmata': 'http://beta.wmata.info'
+    'wmata': 'https://wmata.info',
+    'beta-wmata': 'https://beta.wmata.info'
 };
 
 Object.keys(urls).forEach(key => {
