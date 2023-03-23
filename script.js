@@ -1,10 +1,10 @@
-const urls = {
+const urlist = {
     'wmata': 'https://wmata.info',
     'beta-wmata': 'https://beta.wmata.info'
 };
 
 Object.keys(urls).forEach(key => {
-    const url = urls[key];
+    const url = urlist[key];
     const statusElement = document.querySelector(`#${key}`);
     fetch(url)
         .then(response => {
