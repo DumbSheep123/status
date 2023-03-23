@@ -79,6 +79,26 @@ body {
     margin-bottom: 20px;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333333;
+        color: #f7f7f7;
+    }
+
+    .container {
+        background-color: #555555;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .status-text {
+        color: #f7f7f7;
+    }
+
+    .description {
+        color: #f7f7f7;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .container {
         max-width: 100%;
