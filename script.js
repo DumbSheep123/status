@@ -3,10 +3,10 @@ const statusElement = document.getElementById('status');
 
 // Define a function to fetch the API status and update the UI
 window.onload = function updateStatus() {
-  fetch('https://beta.wmata.info/status')
+  fetch('/status')
     .then(response => response.json())
     .then(data => {
-      if (data.response === 'OK') {
+      if (data.response === '"OK"') {
         statusElement.classList.remove('status-down');
         statusElement.classList.add('status-up');
         alert(data.response);
